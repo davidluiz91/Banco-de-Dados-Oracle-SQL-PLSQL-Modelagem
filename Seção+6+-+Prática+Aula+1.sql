@@ -15,6 +15,8 @@ DESC departments
 
 DESC Jobs
 
+DESC locations
+
 DESC departments
 
 -- Selecionando todas as colunas da Tabela
@@ -32,11 +34,21 @@ DESC Jobs
 SELECT * 
 FROM   jobs;
 
+SELECT *
+FROM departments;
+
 -- Selecionando colunas específicas
+
+SELECT department_id, location_id
+FROM departments;
 
 SELECT employee_id, first_name, last_name, salary
 FROM   employees;
-
+SELECT
+    job_id,
+    job_title
+FROM
+    jobs;
 SELECT department_id, department_name, manager_id
 FROM   departments;
 
@@ -68,23 +80,23 @@ WHERE   commission_pct IS NULL;
 
 -- Utilizando Alias de Coluna
 
-SELECT first_name AS nome, last_name AS sobrenome, salary AS salário
+SELECT first_name nome, last_name sobrenome, salary sal�rio
 FROM employees;
 
 SELECT first_name nome, last_name  sobrenome, salary salário
 FROM employees;
 
-SELECT first_name "Nome", last_name "Sobrenome", salary "Salário ($)", commission_pct "Percentual de comissão"
+SELECT first_name "Nome", last_name "Sobrenome", salary "Sal�rio ($)", commission_pct "Percentual de comiss�o"
 FROM   employees;
 
 -- Utilizando Operador de concatenação 
 
-SELECT first_name || ' ' || last_name || ', data de admissão: ' || hire_date "Funcionário"
+SELECT first_name || ' ' || last_name || ', data de admiss�o: ' || hire_date "Funcion�rio"
 FROM   employees;
 
 -- Utilizando Operador de concatenação e Strings de caracteres 
 
-SELECT first_name || ' ' || last_name || ', data de admissão: ' || hire_date "Funcionário"
+SELECT first_name || ' ' || last_name || ', sal�rio: ' || salary "Funcion�rio"
 FROM   employees;
 
 -- Utilizando Operador alternativo para aspas
@@ -104,6 +116,9 @@ SELECT DISTINCT department_id
 FROM employees;
 
 SELECT DISTINCT last_name
+FROM employees;
+
+SELECT last_name, first_name
 FROM employees;
 
 SELECT DISTINCT last_name, first_name
